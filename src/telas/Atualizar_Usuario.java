@@ -4,10 +4,10 @@
  */
 package telas;
 
-/**
- *
- * @author augusto62170066
- */
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
+import java.sql.ResultSet;
 public class Atualizar_Usuario extends javax.swing.JFrame {
 
     /**
@@ -52,8 +52,18 @@ public class Atualizar_Usuario extends javax.swing.JFrame {
         jLabel5.setText("Cargo:");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Diretor", "Supervisor", "Professor", "Administrativo" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         btnAtualizarUsuario.setText("Atualizar Usuário");
+        btnAtualizarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtualizarUsuarioActionPerformed(evt);
+            }
+        });
 
         btnVoltarAtualizarUsuario.setText("Voltar");
         btnVoltarAtualizarUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -127,6 +137,33 @@ public class Atualizar_Usuario extends javax.swing.JFrame {
 
         this.dispose();
     }//GEN-LAST:event_btnVoltarAtualizarUsuarioActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void btnAtualizarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarUsuarioActionPerformed
+
+    try {
+        Connection conn = conexao.Conexao.getConnection();
+        String sql = "UPDATE usuario SET nome=?, senha=?, cargo=? WHERE id_usuario=?";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setString(1, txtNomeAtualizarUsuario.getText());
+        stmt.setString(2, txtSenhaAtualizarUsuario.getText());
+        stmt.setString(3, jComboBox1.getSelectedItem().toString()); // pega o valor selecionado no combo
+        stmt.setInt(4, Integer.parseInt(txtIdAtualizarUsuario.getText()));
+        stmt.execute();
+
+        JOptionPane.showMessageDialog(null, "Atualizado!!");
+
+        stmt.close();
+        conn.close();
+
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+
+    }//GEN-LAST:event_btnAtualizarUsuarioActionPerformed
 
     /**
      * @param args the command line arguments

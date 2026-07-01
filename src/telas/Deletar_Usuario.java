@@ -3,11 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package telas;
-
-/**
- *
- * @author augusto62170066
- */
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
+import java.sql.ResultSet;
 public class Deletar_Usuario extends javax.swing.JFrame {
 
     /**
@@ -26,21 +25,83 @@ public class Deletar_Usuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnVoltarDeletarAluno = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtIdDeletarAluno = new javax.swing.JTextField();
+        btnDeletarAluno = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        btnVoltarDeletarAluno.setText("Voltar");
+        btnVoltarDeletarAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarDeletarAlunoActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setText("Deletar Aluno");
+
+        jLabel2.setText("ID:");
+
+        btnDeletarAluno.setText("Deletar Aluno");
+        btnDeletarAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeletarAlunoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(216, 216, 216))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(71, 71, 71)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnDeletarAluno)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnVoltarDeletarAluno))
+                    .addComponent(jLabel2)
+                    .addComponent(txtIdDeletarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel1)
+                .addGap(40, 40, 40)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtIdDeletarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDeletarAluno)
+                    .addComponent(btnVoltarDeletarAluno))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnVoltarDeletarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarDeletarAlunoActionPerformed
+       
+        Alunos telas = new Alunos();
+        telas.setVisible(true);
+
+        this.dispose();
+
+    }//GEN-LAST:event_btnVoltarDeletarAlunoActionPerformed
+
+    private void btnDeletarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarAlunoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeletarAlunoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +139,10 @@ public class Deletar_Usuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDeletarAluno;
+    private javax.swing.JButton btnVoltarDeletarAluno;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField txtIdDeletarAluno;
     // End of variables declaration//GEN-END:variables
 }

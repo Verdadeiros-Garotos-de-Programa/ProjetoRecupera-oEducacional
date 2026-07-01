@@ -1,6 +1,9 @@
 
 package telas;
-
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
+import java.sql.ResultSet;
 public class Atualizar_Aluno extends javax.swing.JFrame {
 
     public Atualizar_Aluno() {
@@ -110,8 +113,8 @@ public class Atualizar_Aluno extends javax.swing.JFrame {
 
     private void btnAtualizarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarAlunoActionPerformed
         try{
-            Connection conn = conexao.Conexao.conectar();
-            String sql = "Update aluno SET nome_aluno=?,cpf=?, turma=?  WHERE id_aluno=?";
+            Connection conn = conexao.Conexao.getConnection();
+            String sql = "Update aluno SET nome_aluno=?,cpf=?, id_turma=?  WHERE id_aluno=?";
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, txtNomeAtualizarAluno.getText());
             stmt.setString(2, txtCpfAtualizarAluno.getText());

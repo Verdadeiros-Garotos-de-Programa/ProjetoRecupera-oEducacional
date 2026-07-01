@@ -26,21 +26,128 @@ public class Usuarios extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        btnCriarUsuario = new javax.swing.JButton();
+        btnAtualizarUsuario = new javax.swing.JButton();
+        btnDeletarUsuario = new javax.swing.JButton();
+        btnVoltarUsuarios = new javax.swing.JButton();
+        BtnRelatorioUsuario = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setText("Usuários");
+
+        btnCriarUsuario.setText("Criar Usuário");
+        btnCriarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCriarUsuarioActionPerformed(evt);
+            }
+        });
+
+        btnAtualizarUsuario.setText("Atualizar Usuário");
+        btnAtualizarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtualizarUsuarioActionPerformed(evt);
+            }
+        });
+
+        btnDeletarUsuario.setText("Deletar Usuário");
+        btnDeletarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeletarUsuarioActionPerformed(evt);
+            }
+        });
+
+        btnVoltarUsuarios.setText("Voltar");
+        btnVoltarUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarUsuariosActionPerformed(evt);
+            }
+        });
+
+        BtnRelatorioUsuario.setText("Relatório");
+        BtnRelatorioUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnRelatorioUsuarioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(243, 243, 243)
+                        .addComponent(btnVoltarUsuarios))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(231, 231, 231)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(BtnRelatorioUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnCriarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)
+                                .addComponent(btnAtualizarUsuario)))
+                        .addGap(30, 30, 30)
+                        .addComponent(btnDeletarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addGap(69, 69, 69)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCriarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAtualizarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDeletarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(BtnRelatorioUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addComponent(btnVoltarUsuarios)
+                .addGap(25, 25, 25))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCriarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarUsuarioActionPerformed
+        Criar_Usuario telas = new Criar_Usuario();
+        telas.setVisible(true);
+
+        this.dispose();
+    }//GEN-LAST:event_btnCriarUsuarioActionPerformed
+
+    private void btnAtualizarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarUsuarioActionPerformed
+        Atualizar_Usuario telas = new Atualizar_Usuario();
+        telas.setVisible(true);
+
+        this.dispose();
+    }//GEN-LAST:event_btnAtualizarUsuarioActionPerformed
+
+    private void btnDeletarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarUsuarioActionPerformed
+        Deletar_Usuario telas = new Deletar_Usuario();
+        telas.setVisible(true);
+
+        this.dispose();
+    }//GEN-LAST:event_btnDeletarUsuarioActionPerformed
+
+    private void btnVoltarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarUsuariosActionPerformed
+         Menu_Principal telas = new Menu_Principal();
+        telas.setVisible(true);
+        
+        this.dispose();
+    }//GEN-LAST:event_btnVoltarUsuariosActionPerformed
+
+    private void BtnRelatorioUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRelatorioUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnRelatorioUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +185,11 @@ public class Usuarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnRelatorioUsuario;
+    private javax.swing.JButton btnAtualizarUsuario;
+    private javax.swing.JButton btnCriarUsuario;
+    private javax.swing.JButton btnDeletarUsuario;
+    private javax.swing.JButton btnVoltarUsuarios;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

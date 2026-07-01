@@ -1,6 +1,9 @@
 
 package telas;
-
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
+import java.sql.ResultSet;
 public class Deletar_Turma extends javax.swing.JFrame {
 
     public Deletar_Turma() {
@@ -32,6 +35,11 @@ public class Deletar_Turma extends javax.swing.JFrame {
         jLabel2.setText("ID:");
 
         btnDeletarTurma.setText("Deletar Turma");
+        btnDeletarTurma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeletarTurmaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -78,6 +86,10 @@ public class Deletar_Turma extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnVoltarDeletarTurma2ActionPerformed
 
+    private void btnDeletarTurmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarTurmaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeletarTurmaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -115,8 +127,6 @@ public class Deletar_Turma extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDeletarTurma;
-    private javax.swing.JButton btnVoltarDeletarTurma;
-    private javax.swing.JButton btnVoltarDeletarTurma1;
     private javax.swing.JButton btnVoltarDeletarTurma2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

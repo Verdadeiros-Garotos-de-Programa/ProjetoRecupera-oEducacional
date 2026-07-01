@@ -12,11 +12,20 @@ public class Alunos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnAtualizarAluno1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnCriarAluno = new javax.swing.JButton();
         btnAtualizarAluno = new javax.swing.JButton();
         btnDeletarAluno = new javax.swing.JButton();
         btnVoltarAlujno = new javax.swing.JButton();
+        btnRelatorioAlunos = new javax.swing.JButton();
+
+        btnAtualizarAluno1.setText("Atualizar Aluno");
+        btnAtualizarAluno1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtualizarAluno1ActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,18 +61,17 @@ public class Alunos extends javax.swing.JFrame {
             }
         });
 
+        btnRelatorioAlunos.setText("Relatório");
+        btnRelatorioAlunos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRelatorioAlunosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addComponent(btnCriarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnAtualizarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnDeletarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(74, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -73,6 +81,17 @@ public class Alunos extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(229, 229, 229))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(btnCriarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnRelatorioAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnAtualizarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnDeletarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,7 +103,9 @@ public class Alunos extends javax.swing.JFrame {
                     .addComponent(btnCriarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAtualizarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDeletarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnRelatorioAlunos, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addComponent(btnVoltarAlujno)
                 .addGap(35, 35, 35))
         );
@@ -121,6 +142,14 @@ public class Alunos extends javax.swing.JFrame {
 
         this.dispose();
     }//GEN-LAST:event_btnVoltarAlujnoActionPerformed
+
+    private void btnAtualizarAluno1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarAluno1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAtualizarAluno1ActionPerformed
+
+    private void btnRelatorioAlunosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRelatorioAlunosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRelatorioAlunosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,8 +188,10 @@ public class Alunos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtualizarAluno;
+    private javax.swing.JButton btnAtualizarAluno1;
     private javax.swing.JButton btnCriarAluno;
     private javax.swing.JButton btnDeletarAluno;
+    private javax.swing.JButton btnRelatorioAlunos;
     private javax.swing.JButton btnVoltarAlujno;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

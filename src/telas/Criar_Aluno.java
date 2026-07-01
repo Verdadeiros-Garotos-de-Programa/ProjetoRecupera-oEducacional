@@ -1,6 +1,9 @@
 
 package telas;
-
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
+import java.sql.ResultSet;
 public class Criar_Aluno extends javax.swing.JFrame {
 
     public Criar_Aluno() {
@@ -110,7 +113,7 @@ public class Criar_Aluno extends javax.swing.JFrame {
 
     private void btnCriarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarAlunoActionPerformed
         try{
-            Connection conn = conexao.Conexao.conectar();
+            Connection conn = conexao.Conexao.getConnection();
             String sql = "INSERT INTO aluno(nome_aluno,cpf,id_turma ) VALUES (?,?,?)";
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, txtNomeCriarAluno.getText());

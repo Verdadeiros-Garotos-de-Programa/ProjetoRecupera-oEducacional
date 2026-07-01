@@ -3,11 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package telas;
-
-/**
- *
- * @author augusto62170066
- */
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
+import java.sql.ResultSet;
 public class Criar_Usuario extends javax.swing.JFrame {
 
     /**
@@ -118,7 +117,22 @@ public class Criar_Usuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCriarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarUsuarioActionPerformed
-        // TODO add your handling code here:
+ try {
+        Connection conn = conexao.Conexao.getConnection();
+        String sql = "INSERT INTO login(usuario, senha, cargo)";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setString(1, txtNomeCriarUsuario.getText());
+        stmt.setString(2, txtSenhaCriarUsuario.getText());
+        stmt.setString(3, cbCargoCriarUsuario.getSelectedItem().toString()); // pega o valor selecionado no combo
+      
+stmt.execute();
+            JOptionPane.showMessageDialog(null, "Salvo!","Informação", JOptionPane.INFORMATION_MESSAGE);
+            stmt.close();
+            conn.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        
+    }
     }//GEN-LAST:event_btnCriarUsuarioActionPerformed
 
     private void btnVoltarCriarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarCriarUsuarioActionPerformed

@@ -1,6 +1,9 @@
 
 package telas;
-
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
+import java.sql.ResultSet;
 
 public class Deletar_Aluno extends javax.swing.JFrame {
 
@@ -36,6 +39,11 @@ public class Deletar_Aluno extends javax.swing.JFrame {
         jLabel2.setText("ID:");
 
         btnDeletarAluno.setText("Deletar Aluno");
+        btnDeletarAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeletarAlunoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -81,6 +89,21 @@ public class Deletar_Aluno extends javax.swing.JFrame {
 
         this.dispose();
     }//GEN-LAST:event_btnVoltarDeletarAlunoActionPerformed
+
+    private void btnDeletarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarAlunoActionPerformed
+ try{
+     Connection conn = conexao.Conexao.getConnection();
+     String sql = "DELETE FROM aluno WHERE id_aluno=?";
+     PreparedStatement stmt = conn.prepareStatement(sql);
+     stmt.setInt(1,Integer.parseInt(txtIdDeletarAluno.getText()));
+     stmt.execute();
+     JOptionPane.showMessageDialog(null, "Deletado!");
+     stmt.close();
+     conn.close();
+ }catch(Exception e){
+     e.printStackTrace();
+    }        
+    }//GEN-LAST:event_btnDeletarAlunoActionPerformed
 
     /**
      * @param args the command line arguments
