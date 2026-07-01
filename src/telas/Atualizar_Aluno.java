@@ -1,0 +1,184 @@
+
+package telas;
+
+public class Atualizar_Aluno extends javax.swing.JFrame {
+
+    public Atualizar_Aluno() {
+        initComponents();
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        txtIdAtualizarAluno = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtNomeAtualizarAluno = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtCpfAtualizarAluno = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtTurmaAtualizarAluno = new javax.swing.JTextField();
+        btnAtualizarAluno = new javax.swing.JButton();
+        btnVoltarAtualizarAluno = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel3.setText("Novo Nome:");
+
+        jLabel4.setText("Novo CPF:");
+
+        jLabel5.setText("Nova Turma:");
+
+        btnAtualizarAluno.setText("Atualizar Aluno");
+        btnAtualizarAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtualizarAlunoActionPerformed(evt);
+            }
+        });
+
+        btnVoltarAtualizarAluno.setText("Voltar");
+        btnVoltarAtualizarAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarAtualizarAlunoActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setText("Atualizar Aluno");
+
+        jLabel2.setText("ID:");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(219, 219, 219)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnAtualizarAluno)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnVoltarAtualizarAluno))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel5)
+                                .addComponent(jLabel4)
+                                .addComponent(jLabel2)
+                                .addComponent(txtIdAtualizarAluno, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
+                                .addComponent(jLabel3)
+                                .addComponent(txtNomeAtualizarAluno)
+                                .addComponent(txtCpfAtualizarAluno)
+                                .addComponent(txtTurmaAtualizarAluno)))))
+                .addContainerGap(63, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel1)
+                .addGap(51, 51, 51)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtIdAtualizarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtNomeAtualizarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtCpfAtualizarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtTurmaAtualizarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAtualizarAluno)
+                    .addComponent(btnVoltarAtualizarAluno))
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAtualizarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarAlunoActionPerformed
+        try{
+            Connection conn = conexao.Conexao.conectar();
+            String sql = "Update aluno SET nome_aluno=?,cpf=?, turma=?  WHERE id_aluno=?";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, txtNomeAtualizarAluno.getText());
+            stmt.setString(2, txtCpfAtualizarAluno.getText());
+            stmt.setString(3,txtTurmaAtualizarAluno.getText());
+            stmt.setInt(4, Integer.parseInt(txtIdAtualizarAluno.getText()));
+            stmt.execute();
+            JOptionPane.showMessageDialog(null,"Atualizado!!");
+            stmt.close();
+            conn.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_btnAtualizarAlunoActionPerformed
+
+    private void btnVoltarAtualizarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarAtualizarAlunoActionPerformed
+        Alunos telas = new Alunos();
+        telas.setVisible(true);
+
+        this.dispose();
+    }//GEN-LAST:event_btnVoltarAtualizarAlunoActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Atualizar_Aluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Atualizar_Aluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Atualizar_Aluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Atualizar_Aluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Atualizar_Aluno().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtualizarAluno;
+    private javax.swing.JButton btnVoltarAtualizarAluno;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JTextField txtCpfAtualizarAluno;
+    private javax.swing.JTextField txtIdAtualizarAluno;
+    private javax.swing.JTextField txtNomeAtualizarAluno;
+    private javax.swing.JTextField txtTurmaAtualizarAluno;
+    // End of variables declaration//GEN-END:variables
+}
