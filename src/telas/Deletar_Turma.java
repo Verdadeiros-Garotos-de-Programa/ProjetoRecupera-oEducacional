@@ -87,7 +87,18 @@ public class Deletar_Turma extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVoltarDeletarTurma2ActionPerformed
 
     private void btnDeletarTurmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarTurmaActionPerformed
-        // TODO add your handling code here:
+ try{
+     Connection conn = conexao.Conexao.getConnection();
+     String sql = "DELETE FROM turma WHERE id_turma=?";
+     PreparedStatement stmt = conn.prepareStatement(sql);
+     stmt.setInt(1,Integer.parseInt(txtIdDeletarTurma.getText()));
+     stmt.execute();
+     JOptionPane.showMessageDialog(null, "Deletado!");
+     stmt.close();
+     conn.close();
+ }catch(Exception e){
+     e.printStackTrace();
+    }        
     }//GEN-LAST:event_btnDeletarTurmaActionPerformed
 
     /**

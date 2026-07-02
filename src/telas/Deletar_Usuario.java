@@ -100,7 +100,18 @@ public class Deletar_Usuario extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVoltarDeletarAlunoActionPerformed
 
     private void btnDeletarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarAlunoActionPerformed
-        // TODO add your handling code here:
+ try{
+     Connection conn = conexao.Conexao.getConnection();
+     String sql = "DELETE FROM login WHERE id_login=?";
+     PreparedStatement stmt = conn.prepareStatement(sql);
+     stmt.setInt(1,Integer.parseInt(txtIdDeletarAluno.getText()));
+     stmt.execute();
+     JOptionPane.showMessageDialog(null, "Deletado!");
+     stmt.close();
+     conn.close();
+ }catch(Exception e){
+     e.printStackTrace();
+    }        
     }//GEN-LAST:event_btnDeletarAlunoActionPerformed
 
     /**
