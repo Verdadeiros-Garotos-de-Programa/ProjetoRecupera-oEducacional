@@ -146,7 +146,7 @@ public class Atualizar_Usuario extends javax.swing.JFrame {
 
     try {
         Connection conn = conexao.Conexao.getConnection();
-        String sql = "UPDATE usuario SET nome=?, senha=?, cargo=? WHERE id_usuario=?";
+        String sql = "UPDATE login SET usuario=?, senha=?, cargo=? WHERE id_login=?";
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.setString(1, txtNomeAtualizarUsuario.getText());
         stmt.setString(2, txtSenhaAtualizarUsuario.getText());

@@ -135,7 +135,10 @@ public class Turmas extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVoltarTurmaActionPerformed
 
     private void btnRelatorioTurmasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRelatorioTurmasActionPerformed
-        // TODO add your handling code here:
+        Relatorio_Turmas telas = new Relatorio_Turmas();
+        telas.setVisible(true);
+
+        this.dispose();
     }//GEN-LAST:event_btnRelatorioTurmasActionPerformed
 
     /**

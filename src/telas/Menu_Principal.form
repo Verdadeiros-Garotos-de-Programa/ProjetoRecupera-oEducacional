@@ -29,7 +29,7 @@
                   <Component id="jLabel1" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="Relatorio" min="-2" pref="136" max="-2" attributes="0"/>
+                          <Component id="btnNotasMenu" min="-2" pref="136" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="btnUsuariosMenu" alignment="0" max="32767" attributes="0"/>
                               <Component id="btnTurmasMenu" alignment="0" max="32767" attributes="0"/>
@@ -59,7 +59,7 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="btnAlunosMenu" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="Relatorio" min="-2" max="-2" attributes="0"/>
+              <Component id="btnNotasMenu" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Component id="btnVoltarMenu" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
@@ -108,12 +108,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVoltarMenuActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="Relatorio">
+    <Component class="javax.swing.JButton" name="btnNotasMenu">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Relat&#xf3;rio"/>
+        <Property name="text" type="java.lang.String" value="Notas"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RelatorioActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNotasMenuActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

@@ -16,7 +16,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         btnTurmasMenu = new javax.swing.JButton();
         btnAlunosMenu = new javax.swing.JButton();
         btnVoltarMenu = new javax.swing.JButton();
-        Relatorio = new javax.swing.JButton();
+        btnNotasMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,10 +51,10 @@ public class Menu_Principal extends javax.swing.JFrame {
             }
         });
 
-        Relatorio.setText("Relatório");
-        Relatorio.addActionListener(new java.awt.event.ActionListener() {
+        btnNotasMenu.setText("Notas");
+        btnNotasMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RelatorioActionPerformed(evt);
+                btnNotasMenuActionPerformed(evt);
             }
         });
 
@@ -68,7 +68,7 @@ public class Menu_Principal extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Relatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnNotasMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(btnUsuariosMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnTurmasMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -91,7 +91,7 @@ public class Menu_Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnAlunosMenu)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Relatorio)
+                .addComponent(btnNotasMenu)
                 .addGap(31, 31, 31)
                 .addComponent(btnVoltarMenu)
                 .addGap(36, 36, 36))
@@ -129,10 +129,13 @@ public class Menu_Principal extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnVoltarMenuActionPerformed
 
-    private void RelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelatorioActionPerformed
+    private void btnNotasMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNotasMenuActionPerformed
+        Notas telas = new Notas();
+        telas.setVisible(true);
 
+        this.dispose();
     
-    }//GEN-LAST:event_RelatorioActionPerformed
+    }//GEN-LAST:event_btnNotasMenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,8 +173,8 @@ public class Menu_Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Relatorio;
     private javax.swing.JButton btnAlunosMenu;
+    private javax.swing.JButton btnNotasMenu;
     private javax.swing.JButton btnTurmasMenu;
     private javax.swing.JButton btnUsuariosMenu;
     private javax.swing.JButton btnVoltarMenu;

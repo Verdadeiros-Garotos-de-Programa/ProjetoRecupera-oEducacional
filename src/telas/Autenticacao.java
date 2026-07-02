@@ -111,7 +111,10 @@ public class Autenticacao extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Login realizado com sucesso! Bem-vindo.");
             this.dispose();
 
-            // aqui vai o código de entrar no menu principal
+            Menu_Principal telas = new Menu_Principal();
+            telas.setVisible(true);
+
+            this.dispose();
         }
         else {
             javax.swing.JOptionPane.showMessageDialog(this, "Usuário ou senha inválidos.");

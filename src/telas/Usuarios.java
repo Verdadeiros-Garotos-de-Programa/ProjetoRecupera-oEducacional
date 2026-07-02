@@ -146,7 +146,10 @@ public class Usuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVoltarUsuariosActionPerformed
 
     private void BtnRelatorioUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRelatorioUsuarioActionPerformed
-        // TODO add your handling code here:
+        Relatório_Usuarios telas = new Relatório_Usuarios();
+        telas.setVisible(true);
+
+        this.dispose();
     }//GEN-LAST:event_BtnRelatorioUsuarioActionPerformed
 
     /**

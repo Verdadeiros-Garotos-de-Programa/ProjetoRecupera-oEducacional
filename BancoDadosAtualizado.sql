@@ -21,13 +21,15 @@ nome_aluno VARCHAR (100) NOT NULL,
 cpf VARCHAR (14) NOT NULL,
 FOREIGN KEY (id_turma) REFERENCES turma(id_turma)
 );
-
-CREATE TABLE nota (
+create TABLE nota (
 id_nota INT AUTO_INCREMENT PRIMARY KEY,
 id_aluno INT NOT NULL,
-nota DECIMAL (4,2) NOT NULL,
+nota1 DECIMAL (4,2) NOT NULL,
+nota2 DECIMAL (4,2) NOT NULL,
 FOREIGN KEY (id_aluno) REFERENCES aluno(id_aluno)
 );
 
 INSERT INTO login (usuario, senha, cargo) 
-VALUES ("admin", "1234", "Diretor")
+VALUES ("admin", "1234", "Diretor");
+
+

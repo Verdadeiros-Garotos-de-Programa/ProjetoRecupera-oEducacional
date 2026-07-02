@@ -4,10 +4,11 @@
  */
 package telas;
 
-/**
- *
- * @author guest.jb
- */
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
+import java.sql.ResultSet;
+import javax.swing.table.DefaultTableModel;
 public class Relatório_Usuarios extends javax.swing.JFrame {
 
     /**
@@ -29,7 +30,7 @@ public class Relatório_Usuarios extends javax.swing.JFrame {
         btnVisualizar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblReadUsuarios = new javax.swing.JTable();
         btnVisualizar1 = new javax.swing.JButton();
         btnVoltar = new javax.swing.JButton();
 
@@ -45,18 +46,18 @@ public class Relatório_Usuarios extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setText("Relatório");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblReadUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Usuário", "Cargo"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblReadUsuarios);
 
         btnVisualizar1.setText("Visualizar");
         btnVisualizar1.addActionListener(new java.awt.event.ActionListener() {
@@ -85,11 +86,11 @@ public class Relatório_Usuarios extends javax.swing.JFrame {
                         .addGap(63, 63, 63)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
+                        .addGap(73, 73, 73)
                         .addComponent(btnVisualizar1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(191, 191, 191)
+                        .addGap(169, 169, 169)
                         .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(308, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,15 +109,49 @@ public class Relatório_Usuarios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizarActionPerformed
-        // TODO add your handling code here:
+        try{
+            Connection conn = conexao.Conexao.getConnection();
+            DefaultTableModel modelo = (DefaultTableModel) tblReadUsuarios.getModel();
+            
+            modelo.setRowCount (0);
+            
+            String sql = "select * from login";
+            
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            
+            while(rs.next()){
+                modelo.addRow(new Object[]{rs.getString("usuario"),rs.getString("cargo")
+                });
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_btnVisualizarActionPerformed
 
     private void btnVisualizar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizar1ActionPerformed
-        // TODO add your handling code here:
+        try{
+            Connection conn = conexao.Conexao.getConnection();
+            DefaultTableModel modelo = (DefaultTableModel) tblReadUsuarios.getModel();
+            
+            modelo.setRowCount (0);
+            
+            String sql = "select * from login";
+            
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            
+            while(rs.next()){
+                modelo.addRow(new Object[]{rs.getString("usuario"),rs.getString("cargo")
+                });
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_btnVisualizar1ActionPerformed
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        Alunos telas = new Alunos();
+        Usuarios telas = new Usuarios();
         telas.setVisible(true);
 
         this.dispose();
@@ -163,6 +198,6 @@ public class Relatório_Usuarios extends javax.swing.JFrame {
     private javax.swing.JButton btnVoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblReadUsuarios;
     // End of variables declaration//GEN-END:variables
 }

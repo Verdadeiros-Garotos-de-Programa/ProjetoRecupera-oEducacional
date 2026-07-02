@@ -148,7 +148,10 @@ public class Alunos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAtualizarAluno1ActionPerformed
 
     private void btnRelatorioAlunosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRelatorioAlunosActionPerformed
-        // TODO add your handling code here:
+        Relatório_Alunos telas = new Relatório_Alunos();
+        telas.setVisible(true);
+
+        this.dispose();
     }//GEN-LAST:event_btnRelatorioAlunosActionPerformed
 
     /**

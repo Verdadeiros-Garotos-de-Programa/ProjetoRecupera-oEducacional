@@ -1,13 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-package telas;
 
-/**
- *
- * @author guest.jb
- */
+package telas;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
+import java.sql.ResultSet;
+import javax.swing.table.DefaultTableModel;
+
 public class Relatorio_Turmas extends javax.swing.JFrame {
 
     /**
@@ -28,7 +26,7 @@ public class Relatorio_Turmas extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblRead = new javax.swing.JTable();
         btnVisualizar = new javax.swing.JButton();
         btnVoltar = new javax.swing.JButton();
 
@@ -37,18 +35,18 @@ public class Relatorio_Turmas extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setText("Relatório");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblRead.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null},
+                {null},
+                {null},
+                {null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Turmas"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblRead);
 
         btnVisualizar.setText("Visualizar");
         btnVisualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -74,14 +72,15 @@ public class Relatorio_Turmas extends javax.swing.JFrame {
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(55, 55, 55)
                                 .addComponent(btnVisualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(142, 142, 142)
+                                .addGap(87, 87, 87)
                                 .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(166, 166, 166)
                         .addComponent(jLabel1)))
-                .addContainerGap(326, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,11 +99,27 @@ public class Relatorio_Turmas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisualizarActionPerformed
-        // TODO add your handling code here:
+        try{
+            Connection conn = conexao.Conexao.getConnection();
+            DefaultTableModel modelo = (DefaultTableModel) tblRead.getModel();
+            
+            modelo.setRowCount (0);
+            
+            String sql = "select * from turma";
+            
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            
+            while(rs.next()){
+                modelo.addRow(new Object[]{rs.getString("nome_turma")});
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }   
     }//GEN-LAST:event_btnVisualizarActionPerformed
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        Alunos telas = new Alunos();
+        Turmas telas = new Turmas();
         telas.setVisible(true);
 
         this.dispose();
@@ -150,6 +165,6 @@ public class Relatorio_Turmas extends javax.swing.JFrame {
     private javax.swing.JButton btnVoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblRead;
     // End of variables declaration//GEN-END:variables
 }

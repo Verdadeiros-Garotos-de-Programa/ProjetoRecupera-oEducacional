@@ -3,16 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package telas;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
-import java.sql.ResultSet;
-public class Criar_Usuario extends javax.swing.JFrame {
+
+/**
+ *
+ * @author augusto62170066
+ */
+public class Notas extends javax.swing.JFrame {
 
     /**
-     * Creates new form Criar_Usuario
+     * Creates new form Notas
      */
-    public Criar_Usuario() {
+    public Notas() {
         initComponents();
     }
 
@@ -25,38 +30,39 @@ public class Criar_Usuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFileChooser1 = new javax.swing.JFileChooser();
         jLabel1 = new javax.swing.JLabel();
-        txtNomeCriarUsuario = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtSenhaCriarUsuario = new javax.swing.JTextField();
+        txtNota1 = new javax.swing.JTextField();
+        txtNota2 = new javax.swing.JTextField();
+        btnInserirNotas = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        btnCriarUsuario = new javax.swing.JButton();
-        btnVoltarCriarUsuario = new javax.swing.JButton();
-        txtCargoCriarUsuario = new javax.swing.JTextField();
+        txtIdAluno = new javax.swing.JTextField();
+        btnVoltaNotas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel1.setText("Criar Usuário");
+        jLabel1.setText("Notas");
 
-        jLabel2.setText("Nome:");
+        jLabel2.setText("Nota 1:");
 
-        jLabel3.setText("Senha:");
+        jLabel3.setText("Nota 2:");
 
-        jLabel4.setText("Cargo:");
-
-        btnCriarUsuario.setText("Criar Usuário");
-        btnCriarUsuario.addActionListener(new java.awt.event.ActionListener() {
+        btnInserirNotas.setText("Inserir Notas");
+        btnInserirNotas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCriarUsuarioActionPerformed(evt);
+                btnInserirNotasActionPerformed(evt);
             }
         });
 
-        btnVoltarCriarUsuario.setText("Voltar");
-        btnVoltarCriarUsuario.addActionListener(new java.awt.event.ActionListener() {
+        jLabel4.setText("ID Aluno:");
+
+        btnVoltaNotas.setText("Voltar");
+        btnVoltaNotas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVoltarCriarUsuarioActionPerformed(evt);
+                btnVoltaNotasActionPerformed(evt);
             }
         });
 
@@ -67,75 +73,74 @@ public class Criar_Usuario extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(236, 236, 236)
+                        .addGap(230, 230, 230)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
+                        .addGap(62, 62, 62)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel2)
-                            .addComponent(txtNomeCriarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 454, Short.MAX_VALUE)
-                            .addComponent(jLabel3)
-                            .addComponent(txtSenhaCriarUsuario)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnCriarUsuario)
+                                .addComponent(btnInserirNotas)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnVoltarCriarUsuario))
-                            .addComponent(txtCargoCriarUsuario))))
-                .addContainerGap(88, Short.MAX_VALUE))
+                                .addComponent(btnVoltaNotas))
+                            .addComponent(txtNota1, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+                            .addComponent(txtNota2)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel3)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(txtIdAluno))))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(19, 19, 19)
                 .addComponent(jLabel1)
-                .addGap(55, 55, 55)
+                .addGap(39, 39, 39)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtIdAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtNomeCriarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNota1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtSenhaCriarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtCargoCriarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
+                .addComponent(txtNota2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCriarUsuario)
-                    .addComponent(btnVoltarCriarUsuario))
-                .addContainerGap(37, Short.MAX_VALUE))
+                    .addComponent(btnInserirNotas)
+                    .addComponent(btnVoltaNotas))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCriarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarUsuarioActionPerformed
- try {
-        Connection conn = conexao.Conexao.getConnection();
-        String sql = "INSERT INTO login (usuario, senha, cargo) VALUES(?,?,?)";
-        PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setString(1, txtNomeCriarUsuario.getText());
-        stmt.setString(2, txtSenhaCriarUsuario.getText());
-        stmt.setString(3, txtCargoCriarUsuario.getText()); // pega o valor selecionado no combo
-      
-stmt.execute();
+    private void btnVoltaNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltaNotasActionPerformed
+        Menu_Principal telas = new Menu_Principal();
+        telas.setVisible(true);
+
+        this.dispose();
+    }//GEN-LAST:event_btnVoltaNotasActionPerformed
+
+    private void btnInserirNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirNotasActionPerformed
+        try{
+            Connection conn = conexao.Conexao.getConnection();
+            String sql = "INSERT INTO nota(id_aluno,nota1,nota2 ) VALUES (?,?,?)";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, txtIdAluno.getText());
+            stmt.setString(2, txtNota1.getText());
+            stmt.setString(3, txtNota2.getText());
+            stmt.execute();
             JOptionPane.showMessageDialog(null, "Salvo!","Informação", JOptionPane.INFORMATION_MESSAGE);
             stmt.close();
             conn.close();
         }catch(Exception e){
             e.printStackTrace();
-        
-    }
-    }//GEN-LAST:event_btnCriarUsuarioActionPerformed
-
-    private void btnVoltarCriarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarCriarUsuarioActionPerformed
-        Usuarios telas = new Usuarios();
-        telas.setVisible(true);
-
-        this.dispose();
-    }//GEN-LAST:event_btnVoltarCriarUsuarioActionPerformed
+        }
+    }//GEN-LAST:event_btnInserirNotasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,33 +159,34 @@ stmt.execute();
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Criar_Usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Notas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Criar_Usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Notas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Criar_Usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Notas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Criar_Usuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Notas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Criar_Usuario().setVisible(true);
+                new Notas().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCriarUsuario;
-    private javax.swing.JButton btnVoltarCriarUsuario;
+    private javax.swing.JButton btnInserirNotas;
+    private javax.swing.JButton btnVoltaNotas;
+    private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField txtCargoCriarUsuario;
-    private javax.swing.JTextField txtNomeCriarUsuario;
-    private javax.swing.JTextField txtSenhaCriarUsuario;
+    private javax.swing.JTextField txtIdAluno;
+    private javax.swing.JTextField txtNota1;
+    private javax.swing.JTextField txtNota2;
     // End of variables declaration//GEN-END:variables
 }
